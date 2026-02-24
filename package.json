@@ -1,0 +1,13 @@
+{
+  "name": "metals-dashboard",
+  "version": "2.1.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.28.4",
+    "node-fetch": "^2.6.7"
+  }
+}

@@ -1,0 +1,32 @@
+body {
+  font-family: Vazirmatn, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button {
+  margin: 0 5px;
+  padding: 8px 16px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.green { color: #16a34a; }
+.red { color: #dc2626; }

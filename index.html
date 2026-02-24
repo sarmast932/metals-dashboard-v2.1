@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>Metals Dashboard v2.1</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Metals Dashboard</h1>
+    <nav>
+      <button onclick="showTab('market')">بازار</button>
+      <button onclick="showTab('portfolio')">پرتفو</button>
+      <button onclick="showTab('settings')">تنظیمات</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- MARKET TAB -->
+    <section id="market" class="tab">
+      <div class="card" id="gold-card"></div>
+      <div class="card" id="silver-card"></div>
+
+      <canvas id="goldChart"></canvas>
+    </section>
+
+    <!-- PORTFOLIO TAB -->
+    <section id="portfolio" class="tab hidden">
+      <div class="card" id="portfolio-summary"></div>
+
+      <div class="card">
+        <h3>افزودن معامله</h3>
+        <select id="asset">
+          <option value="gold">طلا</option>
+          <option value="silver">نقره</option>
+        </select>
+        <input type="number" id="quantity" placeholder="تعداد" />
+        <input type="number" id="entryPrice" placeholder="قیمت ورود" />
+        <button onclick="addPosition()">ثبت</button>
+      </div>
+
+      <div id="positions"></div>
+    </section>
+
+    <!-- SETTINGS TAB -->
+    <section id="settings" class="tab hidden">
+      <div class="card">
+        <h3>تنظیم Threshold پرتفو</h3>
+        <input type="number" id="profitThreshold" placeholder="Profit %" />
+        <input type="number" id="lossThreshold" placeholder="Loss %" />
+        <button onclick="updateThreshold()">ذخیره</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

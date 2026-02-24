@@ -1,0 +1,17 @@
+name: Daily Reports
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 09:00 Tehran (UTC offset depends on DST)
+    - cron: '0 12 * * *'  # 16:00 Tehran
+    - cron: '0 19 * * *'  # 23:00 Tehran
+
+jobs:
+  trigger-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call scheduled-report API
+        run: |
+          curl -X GET https://YOUR_DOMAIN/api/scheduled-report?hour=9
+          curl -X GET https://YOUR_DOMAIN/api/scheduled-report?hour=16
+          curl -X GET https://YOUR_DOMAIN/api/scheduled-report?hour=23
